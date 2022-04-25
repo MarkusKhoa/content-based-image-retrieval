@@ -22,4 +22,5 @@ for folder in os.listdir(root_images_path):
         paths_feature.extend(np.array(images_path))
         imgs_feature.extend(feature_extractor(images_np))
         
-print(imgs_feature)
+np.savez_compressed(saved_features_path + "all_features", array1=np.array(paths_feature),
+                    array2=np.array(imgs_feature))
